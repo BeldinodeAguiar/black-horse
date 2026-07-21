@@ -1,6 +1,10 @@
 {
   "blocos": [
     {
+      "pagina": "index",
+      "nome": "Novidades. Clica na imagem para ver mais"
+    },
+    {
       "pagina": "elenco",
       "nome": "Elenco",
       "slug": " ",
@@ -160,10 +164,6 @@
           "foto": "/imagens/img_20250816_075150-1-.jpg"
         }
       ]
-    },
-    {
-      "pagina": "index",
-      "nome": "comida"
     }
   ]
 }
