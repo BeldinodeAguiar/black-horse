@@ -1,29 +1,6 @@
 {
   "blocos": [
     {
-      "pagina": "index",
-      "nome": "Novidades. clique na imagem para ver mais",
-      "slug": " ",
-      "categorias": [
-        {
-          "nome": "Confira aqui as Novidades. Dá um Click na imagem",
-          "foto": "",
-          "itens": [
-            {
-              "disponivel": true,
-              "nome": "Recrutamento de Novos Membros",
-              "fotoPrincipal": "/imagens/img_20250829_164638-1-.jpg",
-              "galeria": [],
-              "audio": "/imagens/alec_benjamin_-_let_me_down_slowly__feat._alessia_cara_-official_lyric_video-256k-.mp3",
-              "descricaoLonga": "um evento com objectivo de caçar novos talentos, inscreva já o seu filho",
-              "documento": "/imagens/aula-1-eit-26-slides.pptx",
-              "data": "2026-06-17T08:45:00.000+02:00"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "pagina": "elenco",
       "nome": "Elenco",
       "slug": " ",
