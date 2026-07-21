@@ -33,7 +33,7 @@
             {
               "disponivel": true,
               "nome": "cesar samuel loforte 14",
-              "fotoPrincipal": "/imagens/captura-de-ecrã-2026-07-21-123812.png"
+              "fotoPrincipal": "/imagens/b-h.png"
             },
             {
               "disponivel": true,
@@ -43,22 +43,22 @@
               "data": "2026-07-20T13:38:00.000+02:00",
               "duracao": "34",
               "funcaodojogador": "comida",
-              "fotoPrincipal": "/imagens/captura-de-ecrã-2026-07-21-123812.png"
+              "fotoPrincipal": "/imagens/b-h.png"
             },
             {
               "disponivel": true,
               "nome": "jose pedro",
-              "fotoPrincipal": "/imagens/captura-de-ecrã-2026-07-21-123812.png"
+              "fotoPrincipal": "/imagens/b-h.png"
             },
             {
               "disponivel": true,
               "nome": "pai",
-              "fotoPrincipal": "/imagens/captura-de-ecrã-2026-07-21-123812.png"
+              "fotoPrincipal": "/imagens/b-h.png"
             },
             {
               "disponivel": true,
               "nome": "Joaquim José",
-              "fotoPrincipal": "/imagens/captura-de-ecrã-2026-07-21-123812.png",
+              "fotoPrincipal": "/imagens/b-h.png",
               "descricaoCurta": "atacante",
               "preco": "Numero 18"
             }
@@ -70,19 +70,23 @@
           "itens": [
             {
               "disponivel": true,
-              "nome": "Blliacs"
+              "nome": "Blliacs",
+              "fotoPrincipal": "/imagens/b-h.png"
             },
             {
               "disponivel": true,
-              "nome": "Bguila"
+              "nome": "Bguila",
+              "fotoPrincipal": "/imagens/b-h.png"
             },
             {
               "disponivel": true,
-              "nome": "oaios"
+              "nome": "oaios",
+              "fotoPrincipal": "/imagens/b-h.png"
             },
             {
               "disponivel": true,
-              "nome": "panino"
+              "nome": "panino",
+              "fotoPrincipal": "/imagens/b-h.png"
             }
           ]
         },
