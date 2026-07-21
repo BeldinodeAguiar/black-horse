@@ -2,7 +2,7 @@ backend:
   name: github
   repo: BeldinodeAguiar/black-horse
   branch: main
-  base_url: https://black-horse.bliacs.workers.dev
+  base_url: https://black-horse.blliacs.workers.dev
 
 media_folder: "imagens"
 public_folder: "/imagens"
