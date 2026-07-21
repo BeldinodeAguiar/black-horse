@@ -160,6 +160,10 @@
           "foto": "/imagens/img_20250816_075150-1-.jpg"
         }
       ]
+    },
+    {
+      "pagina": "index",
+      "nome": "comida"
     }
   ]
 }
