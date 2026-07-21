@@ -1,0 +1,13 @@
+{
+  "name": "meu-site-cms",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "cms": "decap-server",
+    "site": "live-server"
+  },
+  "dependencies": {
+    "decap-server": "3.9.1",
+    "live-server": "1.2.2"
+  }
+}

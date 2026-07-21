@@ -1,0 +1,41 @@
+<!doctype html>
+<html style="background-color: black;}">
+<head>
+  <meta charset="utf-8" />
+  <title>Painel de edição</title>
+  <style>
+     div#nc-root{background-color: black;}
+    body { margin:0; font-family: sans-serif; background-color:black; }
+    #ecra-login {
+      position: fixed; inset: 0; background:#1a1a1a; color:#fff;
+      display:flex; align-items:center; justify-content:center; flex-direction:column;
+      gap: 14px; padding: 20px; text-align:center;
+    }
+    #ecra-login h1 { font-size: 20px; margin:0; }
+    #ecra-login input {
+      padding: 10px 14px; border-radius: 6px; border:none; width: 250px; font-size: 15px;
+    }
+    #ecra-login button {
+      padding: 10px 20px; border-radius: 6px; border:none; background:#f2c94c; cursor:pointer; font-weight:bold;
+    }
+    #ecra-login .erro { color:#ff6b6b; font-size: 13px; height: 16px; }
+    
+  </style>
+</head>
+<body>
+
+  <div id="ecra-login" style="background-color: black;">
+    <h1>🔒 Painel de edição</h1>
+    <input type="text" id="campo-nome" placeholder="O teu nome" autocomplete="off" />
+    <input type="password" id="campo-senha" placeholder="Senha" autocomplete="off" />
+    <button id="botao-entrar">Entrar</button>
+    <p class="erro" id="mensagem-erro"></p>
+  </div>
+
+  <div id="app-decap" style="display:none;background-color: black;"></div>
+
+  
+
+</body>
+<script src="admin.js"></script>
+</html>

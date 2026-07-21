@@ -1,0 +1,188 @@
+{
+  "blocos": [
+    {
+      "pagina": "index",
+      "nome": "Novidades. clique na imagem para ver mais",
+      "slug": " ",
+      "categorias": [
+        {
+          "nome": "Confira aqui as Novidades. Dá um Click na imagem",
+          "foto": "/imagens/captura-de-ecrã-2026-07-21-123812.png",
+          "itens": [
+            {
+              "disponivel": true,
+              "nome": "Recrutamento de Novos Membros",
+              "fotoPrincipal": "/imagens/img_20250829_164638-1-.jpg",
+              "galeria": [],
+              "audio": "/imagens/alec_benjamin_-_let_me_down_slowly__feat._alessia_cara_-official_lyric_video-256k-.mp3",
+              "descricaoLonga": "um evento com objectivo de caçar novos talentos, inscreva já o seu filho",
+              "documento": "/imagens/aula-1-eit-26-slides.pptx",
+              "data": "2026-06-17T08:45:00.000+02:00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pagina": "elenco",
+      "nome": "Elenco",
+      "slug": " ",
+      "categorias": [
+        {
+          "nome": "juniors",
+          "foto": "/imagens/captura-de-ecrã-2026-07-21-123812.png",
+          "itens": [
+            {
+              "descricaoCurta": "poste",
+              "fotoPrincipal": "/imagens/img_20250829_164638-1-.jpg",
+              "preco": "10",
+              "documento": "/imagens/hwvideoeditor_2025_08_29_174926531-1-.mp4",
+              "disponivel": true,
+              "audio": "/imagens/20260720_155117.m4a",
+              "galeria": [],
+              "nome": "Beldino Aguiar ",
+              "descricaoLonga": "um jogador excepcional, cujo foco é a extrema perfeicao, para este caro, desistir nao é uma opção"
+            },
+            {
+              "disponivel": true,
+              "nome": "cesar samuel loforte 14",
+              "fotoPrincipal": "/imagens/captura-de-ecrã-2026-07-21-123812.png"
+            },
+            {
+              "disponivel": true,
+              "nome": "zacarias cristocio",
+              "descricaoCurta": "muitos bom",
+              "descricaoLonga": "ercexopoicp",
+              "data": "2026-07-20T13:38:00.000+02:00",
+              "duracao": "34",
+              "funcaodojogador": "comida",
+              "fotoPrincipal": "/imagens/captura-de-ecrã-2026-07-21-123812.png"
+            },
+            {
+              "disponivel": true,
+              "nome": "jose pedro",
+              "fotoPrincipal": "/imagens/captura-de-ecrã-2026-07-21-123812.png"
+            },
+            {
+              "disponivel": true,
+              "nome": "pai",
+              "fotoPrincipal": "/imagens/captura-de-ecrã-2026-07-21-123812.png"
+            },
+            {
+              "disponivel": true,
+              "nome": "Joaquim José",
+              "fotoPrincipal": "/imagens/captura-de-ecrã-2026-07-21-123812.png",
+              "descricaoCurta": "atacante",
+              "preco": "Numero 18"
+            }
+          ]
+        },
+        {
+          "nome": "seniors",
+          "foto": "/imagens/captura-de-ecrã-2026-07-21-123812.png",
+          "itens": [
+            {
+              "disponivel": true,
+              "nome": "Blliacs"
+            },
+            {
+              "disponivel": true,
+              "nome": "Bguila"
+            },
+            {
+              "disponivel": true,
+              "nome": "oaios"
+            },
+            {
+              "disponivel": true,
+              "nome": "panino"
+            }
+          ]
+        },
+        {
+          "nome": "juvenis",
+          "foto": "/imagens/captura-de-ecrã-2026-07-21-123812.png"
+        }
+      ],
+      "fotoPrincipal": "/imagens/img_20250816_075150-1-.jpg"
+    },
+    {
+      "pagina": "calendario",
+      "nome": "Proximo jogo por escalão",
+      "slug": "timing-viewer",
+      "categorias": [
+        {
+          "nome": "juniors",
+          "foto": "/imagens/img_20250816_075150-1-.jpg",
+          "itens": [
+            {
+              "disponivel": true,
+              "nome": "black horse X Atlelico de madrid",
+              "fotoPrincipal": "/imagens/captura-de-ecrã-2026-07-17-072105.png",
+              "funcaodojogador": "",
+              "preco": "estádio da maxixe",
+              "descricaoLonga": "jogo decisivo sobre o resultado da copa",
+              "descricaoCurta": "24 de junho de 2025 14:23",
+              "data": "2026-07-21T06:47:00.000+02:00"
+            }
+          ]
+        },
+        {
+          "nome": "seniors",
+          "foto": "/imagens/img_20250829_164638-1-.jpg"
+        },
+        {
+          "nome": "juvenis",
+          "foto": "/imagens/img_20250816_075150-1-.jpg"
+        }
+      ]
+    },
+    {
+      "pagina": "calendario",
+      "nome": "jogos passados por escalão",
+      "slug": "jogos-passados-por-escalao",
+      "categorias": [
+        {
+          "nome": "juniors",
+          "foto": "/imagens/img_20250829_164638-1-.jpg"
+        },
+        {
+          "nome": "seniores",
+          "foto": "/imagens/img_20250816_075150-1-.jpg"
+        },
+        {
+          "nome": "juvenis",
+          "foto": "/imagens/img_20250829_164638-1-.jpg"
+        }
+      ]
+    },
+    {
+      "pagina": "galeria",
+      "nome": "Treinamentos",
+      "categorias": [
+        {
+          "nome": "treinamentos",
+          "foto": "/imagens/erro.webp",
+          "itens": [
+            {
+              "disponivel": true,
+              "nome": "comida",
+              "fotoPrincipal": "/imagens/captura-de-ecrã-2026-07-11-104530.png",
+              "documento": "/imagens/20260720_155117.m4a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pagina": "galeria",
+      "nome": "Bastidores",
+      "categorias": [
+        {
+          "nome": "bastidores",
+          "foto": "/imagens/img_20250816_075150-1-.jpg"
+        }
+      ]
+    }
+  ]
+}

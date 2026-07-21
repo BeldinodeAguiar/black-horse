@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meu site com painel de administração</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+   
+<header class="topo">
+    <h1>Feito</h1>
+    <nav class="menu-topo">
+      <a href="index.html" class="active">Home</a>
+      <a href="elenco.html">Elenco</a>
+      <a href="calendario.html">Calendário</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contactos.html">Contactos</a>
+ 
+    </nav>
+  </header>
+ 
+  <header class="page-hero" style="padding-bottom:120px;">
+    <img src="b-h.png" alt="" id="backgrind">
+  <div class="container">
+    <div style="font-size: 200%;">2026 · </div>
+    <h1>Black<br>Horse</h1>
+    <p class="lede">Ninguém apostava em nós. Corremos antes de o estádio acordar — e vencemos à luz do dia. Bem-vindo à casa do azarão.</p>
+    <div class="btn-row" style="margin-top:34px;">
+      <a href="calendario.html" class="btn btn-gold">Ver calendário</a>
+      <a href="elenco.html" class="btn btn-outline">Conhecer o elenco</a>
+    </div>
+  </div>
+</header>
+
+<div class="speed-divider">
+  <svg viewBox="0 0 1200 46" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="14" x2="220" y2="14" stroke="var(--line)" stroke-width="1"/>
+    <line x1="0" y1="24" x2="380" y2="24" stroke="var(--gold)" stroke-width="1" opacity="0.6"/>
+    <line x1="0" y1="34" x2="150" y2="34" stroke="var(--line)" stroke-width="1"/>
+  </svg>
+</div>
+
+
+   
+  <!-- Aqui é onde TODAS as secções que criares no painel vão aparecer,
+       automaticamente, sem precisares de mexer neste ficheiro -->
+  <main id="todas-as-seccoes"></main>
+
+  <!-- Janela (modal) que mostra os detalhes de um item ao clicar -->
+  <div id="modal-item" class="modal escondido">
+    <div class="modal-caixa">
+      <button class="modal-fechar" id="modal-fechar">✕</button>
+      <div id="modal-conteudo"></div>
+    </div>
+  </div>
+
+  <!-- Lightbox para ver a galeria de fotos em ecrã inteiro -->
+  <div id="lightbox" class="lightbox escondido">
+    <button class="lightbox-fechar" id="lightbox-fechar">✕</button>
+    <button class="lightbox-anterior" id="lightbox-anterior">‹</button>
+    <img id="lightbox-imagem" src="" alt="" />
+    <button class="lightbox-seguinte" id="lightbox-seguinte">›</button>
+  </div>
+
+ 
+
+<section class="section reveal">
+  <div class="container">
+    <div class="stat-strip">
+      <div class="stat"><b>20__</b><span>Fundação</span></div>
+       
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Black Horse</h4>
+        <p>Clube fundado em 20__.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram"><span>IG</span></a>
+          <a href="#" aria-label="Facebook"><span>FB</span></a>
+          <a href="#" aria-label="YouTube"><span>YT</span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <a href="elenco.html">Elenco</a>
+        <a href="calendario.html">Calendário</a>
+        <a href="galeria.html">Galeria</a>
+        <a href="sobre.html">Sobre</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a>beldinoaguiar879@gmail.com</a>
+        <a >+258 87 709 6822</a>
+        <p>IFP-Chicuque</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Black Horse</span>
+      <span>Slogan</span>
+    </div>
+  </div>
+</footer>
+
+
+
+  <script src="script.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

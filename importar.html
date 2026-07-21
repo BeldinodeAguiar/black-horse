@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Importar produtos em massa</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .caixa-importar { max-width: 750px; margin: 30px auto; padding: 20px; background:#fff; border-radius:10px; }
+    .caixa-importar h1 { font-size: 20px; }
+    .caixa-importar select, .caixa-importar input[type=file] { display:block; margin: 10px 0; padding: 8px; width: 100%; box-sizing: border-box; }
+    .caixa-importar button { padding: 10px 18px; background:#1a1a1a; color:#fff; border:none; border-radius:6px; cursor:pointer; margin-top: 10px; }
+    .aviso { background:#fff3cd; padding:10px; border-radius:6px; font-size: 13px; margin: 10px 0; }
+    .erro { background:#fde2e2; padding:10px; border-radius:6px; font-size: 13px; margin: 10px 0; }
+    pre { background:#f4f4f4; padding:12px; border-radius:6px; overflow:auto; font-size: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+    th, td { border: 1px solid #ddd; padding: 6px 8px; text-align: left; }
+    th { background: #f4f4f4; }
+    .ok { color: #1a7a3c; }
+    .falta { color: #c0392b; }
+  </style>
+</head>
+<body>
+  <div class="caixa-importar">
+    <h1>Importar produtos/serviços em massa</h1>
+
+    <p><strong>Passo 1</strong> — Copia as tuas fotos para dentro da pasta <code>imagens</code> do projeto (arrasta os ficheiros lá para dentro, como fazes normalmente).</p>
+
+    <p><strong>Passo 2</strong> — No Excel/Google Sheets, cria uma folha com estas colunas (o cabeçalho é obrigatório, exatamente com estes nomes):</p>
+    <pre>categoria,nome,preco,descricaoCurta,descricaoLonga,foto</pre>
+    <ul style="font-size:13px; color:#555;">
+      <li><strong>categoria</strong> — nome da categoria onde o produto vai entrar (se não existir, é criada automaticamente)</li>
+      <li><strong>foto</strong> — o caminho da foto dentro da pasta imagens, ex: <code>imagens/martelo.jpg</code></li>
+      <li><strong>preco</strong>, <strong>descricaoCurta</strong>, <strong>descricaoLonga</strong> — podes deixar em branco se não se aplicar</li>
+    </ul>
+    <p>Depois exporta/guarda como <strong>.csv</strong> (Ficheiro &gt; Transferir/Exportar &gt; Valores separados por vírgula).</p>
+
+    <p><strong>Passo 3</strong> — Escolhe para qual secção do site estes produtos vão:</p>
+    <select id="seletor-secao"></select>
+
+    <p><strong>Passo 4</strong> — Carrega o teu ficheiro .csv:</p>
+    <input type="file" id="input-csv" accept=".csv" />
+
+    <button id="botao-processar">Processar e conferir</button>
+
+    <div id="conferencia" style="display:none;">
+      <h3>Confirma antes de importar:</h3>
+      <table id="tabela-conferencia"></table>
+      <button id="botao-confirmar" style="margin-top:16px;">Confirmar e gerar ficheiro atualizado</button>
+    </div>
+
+    <div id="resultado" style="display:none; margin-top:20px;">
+      <p><strong>Pronto</strong> — o teu <code>site.json</code> atualizado:</p>
+      <button id="botao-descarregar">⬇ Descarregar site.json atualizado</button>
+      <p class="aviso">Substitui o ficheiro <code>dados/site.json</code> do teu projeto por este, e atualiza a página do site (Ctrl+F5).</p>
+    </div>
+  </div>
+
+  <script>
+    var dadosOriginais = null;
+    var linhasCsv = [];
+
+    fetch("dados/site.json")
+      .then(function (r) { return r.json(); })
+      .then(function (dados) {
+        dadosOriginais = dados;
+        var seletorSecao = document.getElementById("seletor-secao");
+        (dados.blocos || []).forEach(function (bloco, indice) {
+          var opcao = document.createElement("option");
+          opcao.value = indice;
+          opcao.textContent = bloco.nome;
+          seletorSecao.appendChild(opcao);
+        });
+      });
+
+    // Lê o CSV como texto simples (aceita separador vírgula ou ponto e vírgula)
+    function lerCsv(texto) {
+      var separador = texto.indexOf(";") !== -1 && texto.indexOf(",") === -1 ? ";" : ",";
+      var linhas = texto.split(/\r?\n/).filter(function (l) { return l.trim() !== ""; });
+      var cabecalho = linhas[0].split(separador).map(function (c) { return c.trim(); });
+
+      return linhas.slice(1).map(function (linha) {
+        var colunas = linha.split(separador);
+        var objeto = {};
+        cabecalho.forEach(function (nomeColuna, indice) {
+          objeto[nomeColuna] = (colunas[indice] || "").trim();
+        });
+        return objeto;
+      });
+    }
+
+    document.getElementById("botao-processar").addEventListener("click", function () {
+      var ficheiroCsv = document.getElementById("input-csv").files[0];
+
+      if (!ficheiroCsv) {
+        alert("Escolhe primeiro o ficheiro .csv.");
+        return;
+      }
+
+      var leitorCsv = new FileReader();
+      leitorCsv.onload = function (evento) {
+        linhasCsv = lerCsv(evento.target.result);
+        mostrarConferencia();
+      };
+      leitorCsv.readAsText(ficheiroCsv, "UTF-8");
+    });
+
+    function mostrarConferencia() {
+      var tabela = document.getElementById("tabela-conferencia");
+      var html = "<tr><th>Nome</th><th>Categoria</th><th>Preço</th><th>Foto</th></tr>";
+
+      linhasCsv.forEach(function (linha) {
+        html += "<tr>" +
+          "<td>" + (linha.nome || "<span class='falta'>sem nome</span>") + "</td>" +
+          "<td>" + (linha.categoria || "<span class='falta'>sem categoria</span>") + "</td>" +
+          "<td>" + (linha.preco || "-") + "</td>" +
+          "<td>" + (linha.foto || "<span class='falta'>sem foto</span>") +
+          "</td></tr>";
+      });
+
+      tabela.innerHTML = html;
+      document.getElementById("conferencia").style.display = "block";
+      document.getElementById("conferencia").scrollIntoView({ behavior: "smooth" });
+    }
+
+    document.getElementById("botao-confirmar").addEventListener("click", function () {
+      var indiceSecao = parseInt(document.getElementById("seletor-secao").value, 10);
+      var bloco = dadosOriginais.blocos[indiceSecao];
+      bloco.categorias = bloco.categorias || [];
+
+      linhasCsv.forEach(function (linha) {
+        if (!linha.nome || !linha.categoria) return; // ignora linhas incompletas
+
+        var categoriaAlvo = bloco.categorias.filter(function (c) { return c.nome === linha.categoria; })[0];
+
+        if (!categoriaAlvo) {
+          categoriaAlvo = { nome: linha.categoria, foto: "", itens: [] };
+          bloco.categorias.push(categoriaAlvo);
+        }
+
+        categoriaAlvo.itens = categoriaAlvo.itens || [];
+        categoriaAlvo.itens.push({
+          nome: linha.nome,
+          preco: linha.preco || "",
+          descricaoCurta: linha.descricaoCurta || "",
+          descricaoLonga: linha.descricaoLonga || "",
+          fotoPrincipal: linha.foto || "",
+          disponivel: true
+        });
+      });
+
+      var blob = new Blob([JSON.stringify(dadosOriginais, null, 2)], { type: "application/json" });
+      var url = URL.createObjectURL(blob);
+
+      document.getElementById("botao-descarregar").onclick = function () {
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = "site.json";
+        a.click();
+      };
+
+      document.getElementById("resultado").style.display = "block";
+      document.getElementById("resultado").scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>

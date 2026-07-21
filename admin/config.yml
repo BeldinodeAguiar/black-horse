@@ -1,0 +1,55 @@
+backend:
+  name: github
+  repo: BeldinodeAguiar/black-horse
+  branch: main
+  base_url: https://black-horse.bliacs.workers.dev
+
+media_folder: "imagens"
+public_folder: "/imagens"
+
+collections:
+  - name: "site"
+    label: "🧩 Secções do site"
+    files:
+      - name: "dados"
+        label: "Todas as secções"
+        file: "dados/site.json"
+        format: "json"
+        fields:
+          - label: "Secções"
+            name: "blocos"
+            widget: "list"
+            summary: "{{fields.nome}}"
+            fields:
+              - { label: "Nome da secção", name: "nome", widget: "string", hint: "Ex: Loja Online, Serviços, Portfólio" }
+              - { label: "Em que página aparece", name: "pagina", widget: "string", default: "index", hint: "Nome do ficheiro HTML sem o .html. Ex: 'index' para a página principal, 'loja' para loja.html, 'servicos' para servicos.html" }
+              - label: "Categorias"
+                name: "categorias"
+                widget: "list"
+                summary: "{{fields.nome}}"
+                fields:
+                  - { label: "Nome da categoria", name: "nome", widget: "string" }
+                  - { label: "Foto da categoria", name: "foto", widget: "image", required: false }
+                  - label: "Itens desta categoria"
+                    name: "itens"
+                    widget: "list"
+                    summary: "{{fields.nome}}"
+                    fields:
+                      - { label: "Nome ou Equipes Adversárias", name: "nome", widget: "string" }
+                      - { label: "Foto principal", name: "fotoPrincipal", widget: "image", required: false }
+                      - { label: "Galeria de fotos", name: "galeria", widget: "list", field: { label: "Foto", name: "src", widget: "image" }, required: false }
+                      - { label: "Vídeo (link YouTube/Vimeo)", name: "video", widget: "string", required: false }
+                      - { label: "Áudio (ficheiro mp3)", name: "audio", widget: "file", required: false }
+                      - { label: "Documento/PDF anexo", name: "documento", widget: "file", required: false }
+                      - { label: "Função ou Data e Hora", name: "descricaoCurta", widget: "string", required: false }
+                      - { label: "Descrição", name: "descricaoLonga", widget: "markdown", required: false }
+                      - { label: "Notas internas (só tu vês)", name: "notasInternas", widget: "text", required: false }
+                      - { label: "Numero ou Local", name: "preco", widget: "string", required: false }
+                      - { label: "Disponível", name: "disponivel", widget: "boolean", default: true, required: false }
+                      - { label: "Promoção/Desconto", name: "promocao", widget: "string", required: false }
+                      - { label: "Etiquetas (tags)", name: "tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" }, required: false }
+                      - { label: "Ordem de exibição", name: "ordem", widget: "number", required: false }
+                      - { label: "Link externo", name: "link", widget: "string", required: false }
+                      - { label: "Texto do botão", name: "botaoTexto", widget: "string", required: false }
+                      - { label: "Data, ignore a hora", name: "data", widget: "datetime", required: false }
+                      - { label: "Duração", name: "duracao", widget: "string", required: false }
